@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile</title>
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,62 +15,84 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="container">
-        <a href="#" class="navbar-brand">/Marduk2axs></a>
-        <ul class="navbar-menu">
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Pet-Projects</a></li>
-          <li><a href="#">Contacts</a></li>
-        </ul>
-      </div>
-    </nav>
-
     <header class="header">
-      <div class="container-left">
-        <h1>Roman Dityatkin</h1>
-        <h2>Frontend Developer</h2>
-        <p>
-          Frontend developer looking for ideas and projects for himself and
-          others
-        </p>
-      </div>
-      <div class="container-right">
-        <div class="image-stack">
-          <div class="image-stack__item image-stack__item--top">
-            <img
-              srcset="images/fasol.png, images/fasol@2x.png 2x"
-              src="images/fasol.png"
-              alt="picture"
-              width="200px"
-            />
-          </div>
-          <div class="image-stack__item image-stack__item--bottom">
-            <img
-              src="images/code.PNG"
-              alt="code"
-              srcset="images/code.png, images/code@2x.png 2x"
-            />
-          </div>
+      <nav class="navbar">
+        <div class="container">
+          <a href="#" class="navbar-brand">/Marduk2axs></a>
+          <ul class="navbar-menu">
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Pet-Projects</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
         </div>
-      </div>
+      </nav>
     </header>
-    <headertwo>
-      <img
-        src="images/miniFasol.png"
-        alt="miniFasol"
-        srcset="images/miniFasol.png, images/miniFasol@2x.png 2x"
-      />
-      <p>
-        A few years ago, I became interested in developing websites and
-        interfaces. Since then, I have been steadily improving my skills. Now I
-        am developing websites and web applications to order or for myself.
-      </p>
-    </headertwo>
-    <aboutMe></aboutMe>
-    <myskills></myskills>
-    <myworks></myworks>
-    <contacts></contacts>
+    <main>
+      <section class="flex-container">
+        <article class="flex-item item-1">
+          <h1>Roman Dityatkin</h1>
+          <h2>Frontend Developer</h2>
+          <p>
+            Frontend developer looking for ideas and projects for himself and
+            others
+          </p>
+        </article>
+        <div class="flex-item item-2">
+          <img
+            srcset="images/fasol.png, images/fasol@2x.png 2x"
+            src="images/fasol.png"
+            alt="picture"
+            width="200px"
+          />
+        </div>
+        <article class="flex-item item-3">
+          <pre>
+            <code>
+                function calculateDesktopOffset(length) {
+                  return '-' + (length / 2) * Math.tan(15 * Math.PI / 180) + 'px';
+              }
+              function makeOvalOverlay() {
+                  var section = document.getElementById("section");
+                  var bannerText = section.getElementsByClassName('bannerText')[0];
+                  var bannerImage = section.getElementsByClassName('bannerImage')[0];
+                  var oval = section.getElementsByClassName('oval')[0];
+                  var $height = bannerText.clientHeight;
+                  var $width = bannerText.clientWidth;
+                  if (window.innerWidth 768) {
+                      bannerImage.style.height = $width / 1.4 + 'px';
+                      oval.style.width = $width * 3 + 'px';
+                      oval.style.height = $width * 3 + 'px';
+                      oval.style.right = '-' + $width * 0.76 + 'px';
+                      oval.style.top = '-' + $width * 0.2 + 'px'; 
+                      } else {
+                      bannerImage.style.height = 'auto';
+                      oval.style.width = $height * 2 + 'px';
+                      oval.style.height = $height * 2 + 'px';
+                      oval.style.right = calculateDesktopOffset($height);
+                      oval.style.top = "-50%";}}
+                      makeOvalOverlay();
+              window.addEventListener('resize', function(){
+                  makeOvalOverlay();});
+              </code>
+             </pre>
+        </article>
+      </section>
+      <section>
+        <img
+          src="images/miniFasol.png"
+          alt="miniFasol"
+          srcset="images/miniFasol.png, images/miniFasol@2x.png 2x"
+        />
+        <p>
+          A few years ago, I became interested in developing websites and
+          interfaces. Since then, I have been steadily improving my skills. Now
+          I am developing websites and web applications to order or for myself.
+        </p>
+      </section>
+      <section></section>
+      <section></section>
+    </main>
+    <footer></footer>
   </body>
 </html>
